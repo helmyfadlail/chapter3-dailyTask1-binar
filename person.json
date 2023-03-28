@@ -1,0 +1,12 @@
+[
+  { "id": 1, "age": 24, "eyeColor": "blue", "name": "Shaffer Lowery", "gender": "male", "phone": "0(957) 597-3729" },
+  { "id": 2, "age": 25, "eyeColor": "brown", "name": "Joanne Hodges", "gender": "female", "phone": "0(895) 569-3679" },
+  { "id": 3, "age": 35, "eyeColor": "green", "name": "Greene House", "gender": "male", "phone": "0(925) 426-2185" },
+  { "id": 4, "age": 24, "eyeColor": "brown", "name": "Janna Hobbs", "gender": "female", "phone": "0(810) 594-3150" },
+  { "id": 5, "age": 34, "eyeColor": "blue", "name": "Miller Mcdaniel", "gender": "male", "phone": "0(867) 593-3324" },
+  { "id": 6, "age": 30, "eyeColor": "brown", "name": "Emilia Booker", "gender": "female", "phone": "0(998) 514-2600" },
+  { "id": 7, "age": 24, "eyeColor": "blue", "name": "Mccarthy Witt", "gender": "male", "phone": "0(957) 497-2491" },
+  { "id": 8, "age": 26, "eyeColor": "blue", "name": "Pace Shepherd", "gender": "male", "phone": "0(966) 459-3640" },
+  { "id": 9, "age": 20, "eyeColor": "green", "name": "Langley Perkins", "gender": "male", "phone": "0(965) 462-2202" },
+  { "age": 15, "eyeColor": "black", "name": "Helmy Fadlail", "gender": "male", "phone": "+62813-3576-3211", "id": 10 }
+]
