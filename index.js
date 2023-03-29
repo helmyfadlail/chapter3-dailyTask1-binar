@@ -12,6 +12,7 @@ const persons = JSON.parse(fs.readFileSync(`${__dirname}/person.json`));
 
 app.use(express.json());
 
+// get all person
 app.get("/person", (req, res) => {
   res.status(200).json({
     status: "success",
@@ -21,6 +22,7 @@ app.get("/person", (req, res) => {
   });
 });
 
+// get person by id
 app.get("/person/:id", (req, res) => {
   const id = req.params.id * 1;
   const person = persons.find((e) => e.id === id);
@@ -40,9 +42,10 @@ app.get("/person/:id", (req, res) => {
   });
 });
 
+// create new person
 app.post("/person", (req, res) => {
   const newId = persons.length + 1;
-  const newPerson = Object.assign({ _id: newId }, req.body);
+  const newPerson = Object.assign({ id: newId }, req.body);
 
   if (req.body.age === "" || req.body.eyeColor === "" || req.body.name === "" || req.body.gender === "" || req.body.phone === "") {
     res.status(401).json({
@@ -77,9 +80,10 @@ app.post("/person", (req, res) => {
   }
 });
 
+// update person by id
 app.put("/person/:id", (req, res) => {
   const id = req.params.id * 1;
-  const index = persons.findIndex((element) => element.id === id);
+  const index = persons.findIndex((el) => el.id === id);
 
   if (index === -1) {
     res.status(404).json({
@@ -107,8 +111,15 @@ app.put("/person/:id", (req, res) => {
       message: "please input a valid gender",
     });
   } else {
-    req.body.id = id;
-    persons[index] = req.body;
+    const updatePerson = {
+      id: id,
+      age: req.body.age,
+      eyeColor: req.body.eyeColor,
+      name: req.body.name,
+      gender: req.body.gender,
+      phone: req.body.phone,
+    };
+    persons[index] = updatePerson;
     fs.writeFile(`${__dirname}/person.json`, JSON.stringify(persons), () => {
       res.status(200).json({
         status: "success",
@@ -120,9 +131,10 @@ app.put("/person/:id", (req, res) => {
   }
 });
 
+// delete person by id
 app.delete("/person/:id", (req, res) => {
   const id = req.params.id * 1;
-  const index = persons.findIndex((element) => element.id === id);
+  const index = persons.findIndex((el) => el.id === id);
 
   if (index === -1) {
     res.status(404).json({
